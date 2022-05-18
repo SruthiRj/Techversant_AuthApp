@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "490250010639",
+    "project_id": "authapp-a63a3",
+    "storage_bucket": "authapp-a63a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490250010639:android:38236ea2d13823e25da37a",
+        "android_client_info": {
+          "package_name": "com.techversant_authapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490250010639-bgmrml3rt2ugsvhq9vn1ckrpam7em5vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techversant_authapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "490250010639-6lp8m4utg79u0tbgvfoplk04qhd7ga2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1ciHmtKVZ5UbSrxp1x_RHHnufN_vw9eQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490250010639-6lp8m4utg79u0tbgvfoplk04qhd7ga2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

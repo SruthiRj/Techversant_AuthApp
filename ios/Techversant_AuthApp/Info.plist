@@ -16,6 +16,45 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+				<string>com.googleusercontent.apps.490250010639-doi5cbphmhrg6d4mlp6lnkkpf3sqper4</string>
+			</array>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1167354927385642</string>
+			</array>
+		</dict>
+		
+	</array>
+	<!-- below for fb -->
+	<!-- <array>
+	<dict>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<string>1167354927385642</string>
+	</array>
+	</dict>
+	</array> -->
+	<key>FacebookAppID</key>
+	<string>1167354927385642</string>
+	<key>FacebookClientToken</key>
+	<string>3f368d51c83597a47c858210c77fdd63</string>
+	<key>FacebookDisplayName</key>
+	<string>Auth App</string>
+	<!-- fpr app switch this code is required -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
+	<!-- above for fb -->
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
