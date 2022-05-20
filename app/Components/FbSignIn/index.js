@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import {
   LoginButton,
   AccessToken,
   Profile,
   GraphRequest,
   GraphRequestManager,
+  LoginManager,
 } from 'react-native-fbsdk-next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {responsiveHeight} from '../Responsive';
+import styles from './styles';
 
 const FbSignIn = props => {
   const [userName, setUserName] = useState('');
@@ -58,8 +61,7 @@ const FbSignIn = props => {
       //   setUserName('Welcome ' + result.name);
       //   setToken('User Token: ' + result.id);
       //   setProfilePic(result.picture.data.url);
-      console.log(' usr name ,,, ' + userName);
-      console.log('  ..... ' + profilePic);
+
       AsyncStorage.setItem('name', result?.name);
       AsyncStorage.setItem('@image', result.picture.data?.url);
       AsyncStorage.setItem('@email', '');
@@ -68,9 +70,63 @@ const FbSignIn = props => {
     }
   };
 
+  const login = () => {
+    LoginManager.logInWithPermissions([
+      'email',
+      'public_profile',
+      'user_friends',
+    ]).then(
+      function (result) {
+        if (result.isCancelled) {
+          console.log('Login cancelled');
+        } else {
+          console.log(
+            'Login success with permissions: ' +
+              result.grantedPermissions.toString(),
+          );
+          console.log(JSON.stringify(result));
+          const processRequest = new GraphRequest(
+            '/me?fields=name,picture.type(large)',
+            null,
+            getResponseInfo,
+          );
+
+          // Start the graph request.
+          new GraphRequestManager().addRequest(processRequest).start();
+        }
+      },
+      function (error) {
+        console.log('Login fail with error: ' + error);
+      },
+    );
+  };
+
+  return (
+    <TouchableOpacity onPress={() => login()} style={styles.button}>
+      {/* <Image
+        source={require('../../assets/fb.png')}
+        style={{
+          height: 20,
+          width: 10,
+          marginRight: 5,
+        }}
+      /> */}
+      <Text style={{color: 'white'}}>Login with Facebook</Text>
+    </TouchableOpacity>
+  );
+
   return (
     <LoginButton
+      style={{
+        height: responsiveHeight(5),
+        width: responsiveHeight(20),
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+      }}
       onLoginFinished={(error, result) => {
+        console.log(error);
+        console.log(result);
         if (error) {
           console.log('login has error: ' + result.error);
         } else if (result.isCancelled) {
@@ -81,8 +137,6 @@ const FbSignIn = props => {
             console.log('get profile details...');
             // console.log(' then navigate');
             //this only gets the access token now fetch profile details..
-            // console.log('######');
-            // console.log('\n');
             // var profileDetails = getProfile();
             //   console.log( JSON.stringify( profileDetails ) );
 

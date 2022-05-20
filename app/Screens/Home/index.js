@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {StackActions} from '@react-navigation/native';
 import {LoginManager} from 'react-native-fbsdk-next';
+
 const popAction = StackActions.pop(0);
 
 export default class Home extends Component {
@@ -23,14 +24,12 @@ export default class Home extends Component {
 
   getValues = async () => {
     try {
-      console.log(' getting values frim async');
+      console.log(' getting values from async');
       const value = await AsyncStorage.getItem('name');
       // const email = await AsyncStorage.getItem('@email');
       const image = await AsyncStorage.getItem('@image');
       const type = await AsyncStorage.getItem('type');
-      console.log(' img stored is ... ' + image);
       if (value !== null) {
-        console.log(' ehelloo');
         // value previously stored
         this.setState({
           name: value,
@@ -52,7 +51,6 @@ export default class Home extends Component {
     } else {
       this.logoutFromGoogle();
     }
-    //try out pop first...
   };
 
   logoutFromFacebook = () => {
@@ -72,7 +70,6 @@ export default class Home extends Component {
       // Removing user Info
       // setUserInfo( null );
       AsyncStorage.clear();
-      //this.navigation.pop();
       this.props.navigation.reset({
         index: 0,
         routeNames: ['Login'],
@@ -91,13 +88,11 @@ export default class Home extends Component {
           <Image
             source={{
               uri: `${this.state.imageUrl}`,
-              //'https://lh3.googleusercontent.com/a/AATXAJx6AGn8O8NU_FWnSS0pcBaVcytn9JFt_BwpnHoO=s96-c',
             }}
             style={styles.imageBox}
           />
           <Text style={styles.textStyle}>{this.state.name}</Text>
           <Text style={styles.emailStyle}>{this.state.type}</Text>
-          {/* <Text>Welcome sruthi!!!, Hope you have a great time using AuthApp</Text> */}
 
           <TouchableOpacity
             style={styles.logout}

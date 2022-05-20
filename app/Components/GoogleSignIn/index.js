@@ -6,6 +6,7 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {responsiveHeight} from '../Responsive';
 
 const GoogleSignIn = props => {
   const [isSigninInProgress, setSignIn] = useState(false);
@@ -13,19 +14,19 @@ const GoogleSignIn = props => {
 
   useEffect(() => {
     //mandatory to call configure before signin
-    googleConfigure();
-  });
+    // googleConfigure();
+  }, []);
 
-  const googleConfigure = () => {
-    console.log(' configure...');
-    GoogleSignin.configure({
-      webClientId:
-        '490250010639-6lp8m4utg79u0tbgvfoplk04qhd7ga2c.apps.googleusercontent.com',
-      offlineAccess: true,
-      hostedDomain: '',
-      forceConsentPrompt: true,
-    });
-  };
+  // const googleConfigure = () => {
+  //   console.log(' configure...');
+  //   GoogleSignin.configure({
+  //     webClientId:
+  //       '490250010639-6lp8m4utg79u0tbgvfoplk04qhd7ga2c.apps.googleusercontent.com',
+  //     offlineAccess: true,
+  //     hostedDomain: '',
+  //     forceConsentPrompt: true,
+  //   });
+  // };
 
   const storeData = async (name, email, image) => {
     try {
@@ -41,6 +42,7 @@ const GoogleSignIn = props => {
   };
 
   const _signIn = async () => {
+    // googleConfigure();
     try {
       await GoogleSignin.hasPlayServices({
         // Check if device has Google Play Services installed
@@ -48,20 +50,21 @@ const GoogleSignIn = props => {
         showPlayServicesUpdateDialog: true,
       });
       const userinfo = await GoogleSignin.signIn();
-      console.log(' ');
-      console.log(userInfo);
+      //const isSignedIn = await GoogleSignin.isSignedIn();
+
       setUserInfo(userinfo);
-      //if (userInfo == null) _signIn();
-      if (userInfo) {
-        console.log('navigate to home with userinfo');
-        console.log(userInfo.user?.name, userInfo.user?.photo);
+      if (userinfo) {
+        // console.log('navigate to home with userinfo');
+        // console.log(userinfo.user?.name, userinfo.user?.photo);
         storeData(
-          userInfo.user?.name,
-          userInfo.user?.email,
-          userInfo.user?.photo,
+          userinfo.user?.name,
+          userinfo.user?.email,
+          userinfo.user?.photo,
         );
       }
     } catch (error) {
+      console.log(error);
+
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         Alert.alert('User Cancelled the Login Flow');
       } else if (error.code === statusCodes.IN_PROGRESS) {
@@ -73,10 +76,11 @@ const GoogleSignIn = props => {
       }
     }
   };
+
   return (
     <GoogleSigninButton
-      style={{width: 192, height: 48}}
-      size={GoogleSigninButton.Size.Wide}
+      style={{width: responsiveHeight(25), height: responsiveHeight(5)}}
+      size={GoogleSigninButton.Size.Standard}
       color={GoogleSigninButton.Color.Light}
       onPress={_signIn}
       disabled={isSigninInProgress}
