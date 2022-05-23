@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {StackActions} from '@react-navigation/native';
 import {LoginManager} from 'react-native-fbsdk-next';
+import {responsiveHeight} from '../../Components/Responsive';
 
 const popAction = StackActions.pop(0);
 
@@ -24,7 +25,6 @@ export default class Home extends Component {
 
   getValues = async () => {
     try {
-      console.log(' getting values from async');
       const value = await AsyncStorage.getItem('name');
       // const email = await AsyncStorage.getItem('@email');
       const image = await AsyncStorage.getItem('@image');
@@ -43,66 +43,29 @@ export default class Home extends Component {
     }
   };
 
-  logout = () => {
-    //do switch maybe according to loginType
-    //rigt now do google logout.
-    if (this.state.type == 'fb') {
-      this.logoutFromFacebook();
-    } else {
-      this.logoutFromGoogle();
-    }
-  };
-
-  logoutFromFacebook = () => {
-    LoginManager.logOut();
-    AsyncStorage.clear();
-    this.props.navigation.reset({
-      index: 0,
-      routeNames: ['Login'],
-      routes: [{name: 'Login'}],
-    });
-  };
-
-  logoutFromGoogle = async () => {
-    try {
-      await GoogleSignin.revokeAccess();
-      await GoogleSignin.signOut();
-      // Removing user Info
-      // setUserInfo( null );
-      AsyncStorage.clear();
-      this.props.navigation.reset({
-        index: 0,
-        routeNames: ['Login'],
-        routes: [{name: 'Login'}],
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.homeText}>Home screen</Text>
-        <View style={styles.innerBox}>
+      <View style={styles.container}>
+        <View style={styles.row}>
+          <View style={{flexDirection: 'column'}}>
+            <Text style={styles.homeText}>Hello {this.state.name}</Text>
+            <Text style={styles.welcome}>Welcome Back!</Text>
+          </View>
           <Image
             source={{
               uri: `${this.state.imageUrl}`,
             }}
             style={styles.imageBox}
           />
-          <Text style={styles.textStyle}>{this.state.name}</Text>
-          <Text style={styles.emailStyle}>{this.state.type}</Text>
-
-          <TouchableOpacity
-            style={styles.logout}
-            onPress={() => {
-              this.logout();
-            }}>
-            <Text style={styles.logoutText}>Logout</Text>
-          </TouchableOpacity>
         </View>
-      </SafeAreaView>
+        <View style={styles.secondBox}>
+          <Text></Text>
+        </View>
+        <View style={styles.boxConatiner}>
+          <View style={styles.box1}></View>
+          <View style={styles.box2}></View>
+        </View>
+      </View>
     );
   }
 }

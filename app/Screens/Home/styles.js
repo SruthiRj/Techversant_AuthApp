@@ -1,11 +1,14 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {responsiveHeight} from '../../Components/Responsive';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+} from '../../Components/Responsive';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     padding: 25,
   },
   innerBox: {
@@ -15,38 +18,46 @@ const styles = StyleSheet.create({
     paddingTop: responsiveHeight(15),
   },
   homeText: {
-    fontSize: 25,
-    fontWeight: '700',
+    fontSize: responsiveFontSize(1.9),
+    fontWeight: '600',
     color: 'black',
-    marginLeft: 20,
+    // marginTop: responsiveHeight(2),
+  },
+  welcome: {
+    marginTop: responsiveHeight(1),
+  },
+  row: {
+    // flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: responsiveHeight(2),
   },
   imageBox: {
-    height: responsiveHeight(20),
-    width: responsiveHeight(20),
+    height: responsiveHeight(5),
+    width: responsiveHeight(5),
     borderRadius: responsiveHeight(10),
   },
-  textStyle: {
-    marginTop: 15,
-    color: 'black',
-    fontWeight: '500',
-    fontSize: 22,
+  boxConatiner: {
+    marginTop: responsiveHeight(3),
+    flexDirection: 'row',
+    flex: 0.3,
   },
-  emailStyle: {
-    marginTop: 5,
-    color: 'black',
+  secondBox: {
+    flex: 0.3,
+    backgroundColor: '#86B6C9',
+    marginTop: responsiveHeight(2),
+    borderRadius: responsiveHeight(1.5),
   },
-  logout: {
-    padding: 10,
-    width: '45%',
-    alignItems: 'center',
-    backgroundColor: 'grey',
-    //  marginTop: 30,
-    borderRadius: 5,
-    position: 'absolute',
-    bottom: responsiveHeight(20),
+  box1: {
+    flex: 1,
+    backgroundColor: '#ECBDC4',
+    borderRadius: responsiveHeight(1.5),
   },
-  logoutText: {
-    color: 'white',
+  box2: {
+    flex: 2,
+    backgroundColor: '#E18AAA',
+    marginLeft: responsiveHeight(2),
+    borderRadius: responsiveHeight(1.5),
   },
 });
 

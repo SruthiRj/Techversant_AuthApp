@@ -31,6 +31,7 @@
 		00E356EE1AD99517003FC87E /* Techversant_AuthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Techversant_AuthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* Techversant_AuthAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Techversant_AuthAppTests.m; sourceTree = "<group>"; };
+		09EE88132FF941ECA6857292 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Techversant_AuthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Techversant_AuthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Techversant_AuthApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Techversant_AuthApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,14 +39,29 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Techversant_AuthApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Techversant_AuthApp/main.m; sourceTree = "<group>"; };
 		1466C1A3D35F7C5A6218F600 /* libPods-Techversant_AuthApp-Techversant_AuthAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Techversant_AuthApp-Techversant_AuthAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18309584D0364521AAA70B74 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		282F1A385DD54C8B9FC855C9 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		29858E23D8164B8DAA40F069 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		3E74214E7D9C477B89C9CEDB /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		477A2FF1A25A445B98763E29 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		6DF5A65B60AD4B508D494538 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		74E382001E3F3CF0E9C1398F /* Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp-Techversant_AuthAppTests/Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		79D49D64579332FB16D357DC /* Pods-Techversant_AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp.release.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp/Pods-Techversant_AuthApp.release.xcconfig"; sourceTree = "<group>"; };
+		7EEDBD625A6C4AA98B3332F3 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		817F9C132833BCE1000970A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Techversant_AuthApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		848B0960952C469FB4A94000 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		8B1A4C38527480E5BAA888FE /* Pods-Techversant_AuthApp-Techversant_AuthAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp-Techversant_AuthAppTests.debug.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp-Techversant_AuthAppTests/Pods-Techversant_AuthApp-Techversant_AuthAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D76B512D05EDDCF3ED39EF9 /* libPods-Techversant_AuthApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Techversant_AuthApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A963B611040E42ACB30B1669 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		B618D5EBBC52467F9685C419 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		BE0B4142BE254B28B266A8E9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		C33528A218DE4EBB804AB630 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		CA6A95670ACDD67DB3994921 /* Pods-Techversant_AuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp.debug.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp/Pods-Techversant_AuthApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D616375D461647AFA7506A41 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		E7E2B7A9ABE04F86AC30FD94 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F7B86B9E88DF4F3E96F8F9A1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +114,29 @@
 			name = Techversant_AuthApp;
 			sourceTree = "<group>";
 		};
+		235E1FD2F779444882C03B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A963B611040E42ACB30B1669 /* AntDesign.ttf */,
+				477A2FF1A25A445B98763E29 /* Entypo.ttf */,
+				282F1A385DD54C8B9FC855C9 /* EvilIcons.ttf */,
+				848B0960952C469FB4A94000 /* Feather.ttf */,
+				6DF5A65B60AD4B508D494538 /* FontAwesome.ttf */,
+				BE0B4142BE254B28B266A8E9 /* FontAwesome5_Brands.ttf */,
+				D616375D461647AFA7506A41 /* FontAwesome5_Regular.ttf */,
+				29858E23D8164B8DAA40F069 /* FontAwesome5_Solid.ttf */,
+				09EE88132FF941ECA6857292 /* Fontisto.ttf */,
+				F7B86B9E88DF4F3E96F8F9A1 /* Foundation.ttf */,
+				7EEDBD625A6C4AA98B3332F3 /* Ionicons.ttf */,
+				B618D5EBBC52467F9685C419 /* MaterialCommunityIcons.ttf */,
+				E7E2B7A9ABE04F86AC30FD94 /* MaterialIcons.ttf */,
+				18309584D0364521AAA70B74 /* Octicons.ttf */,
+				C33528A218DE4EBB804AB630 /* SimpleLineIcons.ttf */,
+				3E74214E7D9C477B89C9CEDB /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +164,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				235E1FD2F779444882C03B89 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";

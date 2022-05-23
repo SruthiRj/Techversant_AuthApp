@@ -16,8 +16,8 @@ export default class Login extends Component {
   navigateToHome = () => {
     this.props.navigation.reset({
       index: 0,
-      routeNames: ['Home'],
-      routes: [{name: 'Home'}],
+      routeNames: ['BottomTab'],
+      routes: [{name: 'BottomTab'}],
     });
   };
 
@@ -40,7 +40,7 @@ export default class Login extends Component {
 
         <View style={styles.line} />
 
-        <AppleSignin />
+        {/* <AppleSignin /> */}
       </SafeAreaView>
     );
   }

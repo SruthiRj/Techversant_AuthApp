@@ -2,25 +2,25 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Login from '../../Screens/Login';
-import Home from '../../Screens/Home';
+import BottomTab from '../BottomTab';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <RootStack.Navigator initialRouteName="Login">
+        <RootStack.Screen
           name="Login"
           component={Login}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Home"
-          component={Home}
+        <RootStack.Screen
+          name="BottomTab"
+          component={BottomTab}
           options={{headerShown: false}}
         />
-      </Stack.Navigator>
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
