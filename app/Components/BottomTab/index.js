@@ -1,10 +1,18 @@
 import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  UIManager,
+  Platform,
+  LayoutAnimation,
+  Dimensions,
+} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import BellIcon from 'react-native-vector-icons/Entypo';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {TouchableRipple, Text as RNText} from 'react-native-paper';
 
 import Notifications from '../../Screens/Notifications';
 import Share from '../../Screens/Share';
@@ -23,6 +31,23 @@ const CustomTabButton = ({children, onPress}) => {
     </TouchableOpacity>
   );
 };
+const RippleButton = ({children, onPress}) => {
+  return (
+    <TouchableRipple
+      onPress={() => {
+        if (Platform.OS === 'android') {
+          UIManager.setLayoutAnimationEnabledExperimental(true);
+        }
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        onPress();
+      }}
+      style={{width: Dimensions.get('window').width / 5}}
+      underlayColor="rgba(0, 0, 0, .32)"
+      rippleColor="rgba(0, 0, 0, .32)">
+      <>{children}</>
+    </TouchableRipple>
+  );
+};
 
 const BottomTab = () => {
   return (
@@ -30,15 +55,23 @@ const BottomTab = () => {
       initialRouteName={'Home'}
       screenOptions={{
         tabBarActiveTintColor: '#cd077d',
+        headerPressOpacity: 0.7,
         tabBarShowLabel: false,
+        headerStyle: {
+          shadowRadius: 1,
+          shadowOffset: {
+            width: 5,
+            height: 5,
+          },
+          elevation: 10,
+          shadowOpacity: 0.1,
+          shadowColor: 'black',
+        },
         tabBarStyle: {
           position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
-          // elevation: 0,
+          bottom: 0,
           backgroundColor: '#ffffff',
-          shadowColor: '#7F5DF0',
+          shadowColor: 'black',
           shadowRadius: 3.5,
           shadowOffset: {
             width: 0,
@@ -48,21 +81,22 @@ const BottomTab = () => {
           shadowOpacity: 0.25,
           borderRadius: responsiveHeight(0.5),
           alignItems: 'center',
-          justifyContent: 'center',
-          alignContent: 'center',
+          justifyContent: 'space-between',
           height: responsiveHeight(9),
+          width: '100%',
+          //Dimensions.get( 'window' ).width,
         },
       }}>
       <BottomStack.Screen
         name="Home"
         component={Home}
+        shadowColor={'black'}
         options={{
-          //pas sthe color prop to get the active or inactive color to icons/text.
           tabBarIcon: ({focused, color}) => {
             return (
-              <View style={styles.iconBox}>
+              <>
                 <AntIcon name="home" size={responsiveHeight(3)} color={color} />
-                <Text
+                <RNText
                   style={[
                     styles.top,
                     {
@@ -70,9 +104,12 @@ const BottomTab = () => {
                     },
                   ]}>
                   Home
-                </Text>
-              </View>
+                </RNText>
+              </>
             );
+          },
+          tabBarButton: props => {
+            return <RippleButton {...props} />;
           },
         }}
       />
@@ -87,6 +124,9 @@ const BottomTab = () => {
                 <Text style={[styles.top, {color: color}]}>About</Text>
               </>
             );
+          },
+          tabBarButton: props => {
+            return <RippleButton {...props} />;
           },
         }}
       />
@@ -117,6 +157,9 @@ const BottomTab = () => {
               </>
             );
           },
+          tabBarButton: props => {
+            return <RippleButton {...props} />;
+          },
         }}
       />
       <BottomStack.Screen
@@ -131,13 +174,14 @@ const BottomTab = () => {
                   size={responsiveHeight(3)}
                   color={color}
                 />
-                <Text
-                  numberOfLines={1}
-                  style={[styles.top, {width: '60%', color: color}]}>
+                <Text numberOfLines={1} style={[styles.top, {color: color}]}>
                   Notifications
                 </Text>
               </>
             );
+          },
+          tabBarButton: props => {
+            return <RippleButton {...props} />;
           },
         }}
       />

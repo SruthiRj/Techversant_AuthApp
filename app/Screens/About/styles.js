@@ -4,15 +4,12 @@ import {responsiveHeight} from '../../Components/Responsive';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'white',
     padding: 25,
   },
   innerBox: {
-    // justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     paddingTop: responsiveHeight(6),
-    // backgroundColor: 'red',
   },
   homeText: {
     fontSize: 25,
@@ -40,13 +37,15 @@ const styles = StyleSheet.create({
     width: '45%',
     alignItems: 'center',
     backgroundColor: '#E8E3CC',
-    //  marginTop: 30,
     borderRadius: 5,
-    position: 'absolute',
-    bottom: responsiveHeight(20),
+    marginTop: responsiveHeight(10),
+    // position: 'absolute',
+    // bottom: responsiveHeight(20),
+    // top: 0,
   },
-  logoutText: {
-    // color: 'white',
+  logoutText: {},
+  outterView: {
+    flex: 1,
   },
 });
 

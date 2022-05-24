@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import {StackActions} from '@react-navigation/native';
-import {LoginManager} from 'react-native-fbsdk-next';
-import {responsiveHeight} from '../../Components/Responsive';
-
-const popAction = StackActions.pop(0);
 
 export default class Home extends Component {
   constructor(props) {
@@ -26,28 +20,23 @@ export default class Home extends Component {
   getValues = async () => {
     try {
       const value = await AsyncStorage.getItem('name');
-      // const email = await AsyncStorage.getItem('@email');
       const image = await AsyncStorage.getItem('@image');
       const type = await AsyncStorage.getItem('type');
       if (value !== null) {
-        // value previously stored
         this.setState({
           name: value,
-          // email: email,
           imageUrl: image,
           type: type,
         });
       }
-    } catch (e) {
-      // error reading value
-    }
+    } catch (e) {}
   };
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-          <View style={{flexDirection: 'column'}}>
+          <View style={styles.column}>
             <Text style={styles.homeText}>Hello {this.state.name}</Text>
             <Text style={styles.welcome}>Welcome Back!</Text>
           </View>
@@ -62,8 +51,8 @@ export default class Home extends Component {
           <Text></Text>
         </View>
         <View style={styles.boxConatiner}>
-          <View style={styles.box1}></View>
-          <View style={styles.box2}></View>
+          <View style={styles.box1} />
+          <View style={styles.box2} />
         </View>
       </View>
     );

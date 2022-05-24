@@ -1,4 +1,3 @@
-import React from 'react';
 import {StyleSheet} from 'react-native';
 import {
   responsiveFontSize,
@@ -8,11 +7,10 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'white',
     padding: 25,
+    backgroundColor: 'white',
   },
   innerBox: {
-    // justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     paddingTop: responsiveHeight(15),
@@ -21,13 +19,11 @@ const styles = StyleSheet.create({
     fontSize: responsiveFontSize(1.9),
     fontWeight: '600',
     color: 'black',
-    // marginTop: responsiveHeight(2),
   },
   welcome: {
     marginTop: responsiveHeight(1),
   },
   row: {
-    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: responsiveHeight(2),
@@ -45,7 +41,7 @@ const styles = StyleSheet.create({
   secondBox: {
     flex: 0.3,
     backgroundColor: '#86B6C9',
-    marginTop: responsiveHeight(2),
+    marginTop: responsiveHeight(3),
     borderRadius: responsiveHeight(1.5),
   },
   box1: {
@@ -58,6 +54,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#E18AAA',
     marginLeft: responsiveHeight(2),
     borderRadius: responsiveHeight(1.5),
+  },
+  column: {
+    flexDirection: 'column',
   },
 });
 

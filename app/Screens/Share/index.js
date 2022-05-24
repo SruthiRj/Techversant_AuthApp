@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text} from 'react-native';
 
 export default class Share extends Component {
   constructor() {
@@ -9,7 +9,6 @@ export default class Share extends Component {
   render() {
     return (
       <View>
-        {/* header component */}
         <View>
           <Text>Share screen</Text>
         </View>

@@ -1,21 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
 
 import {
   AppleButton,
   appleAuth,
 } from '@invertase/react-native-apple-authentication';
+import styles from './styles';
 
 const AppleSignin = props => {
   async function onAppleButtonPress() {
-    // performs login request
     const appleAuthRequestResponse = await appleAuth.performRequest({
       requestedOperation: appleAuth.Operation.LOGIN,
       requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
     });
 
-    // get current authentication state for user
-    // /!\ This method must be tested on a real device. On the iOS simulator it always throws an error.
     const credentialState = await appleAuth.getCredentialStateForUser(
       appleAuthRequestResponse.user,
     );
@@ -30,10 +27,7 @@ const AppleSignin = props => {
     <AppleButton
       buttonStyle={AppleButton.Style.WHITE}
       buttonType={AppleButton.Type.SIGN_IN}
-      style={{
-        width: 160, // You must specify a width
-        height: 45, // You must specify a height
-      }}
+      style={styles.button}
       onPress={() => onAppleButtonPress()}
     />
   );

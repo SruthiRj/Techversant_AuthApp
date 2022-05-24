@@ -3,13 +3,12 @@ import {responsiveFontSize, responsiveHeight} from '../Responsive';
 
 const styles = StyleSheet.create({
   customButton: {
-    // position: 'absolute',
     top: -responsiveHeight(3),
-    width: responsiveHeight(7),
-    height: responsiveHeight(7),
+    width: responsiveHeight(8),
+    height: responsiveHeight(8),
     borderRadius: responsiveHeight(10),
     backgroundColor: '#CFDFEF',
-    shadowColor: '#7F5DF0',
+    shadowColor: 'black',
     shadowRadius: 3.5,
     shadowOffset: {
       width: 0,
@@ -19,22 +18,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: 'center',
   },
-  mainTab: {
-    position: 'absolute',
-    bottom: 25,
-    left: 20,
-    right: 20,
-    elevation: 0,
-    backgroundColor: 'red',
-    shadowColor: '#7F5DF0',
-    shadowRadius: 3.5,
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    elevation: 5,
-  },
+
   top: {
     paddingTop: responsiveHeight(1),
     fontSize: responsiveFontSize(1.5),
@@ -42,14 +28,12 @@ const styles = StyleSheet.create({
   iconBox: {
     alignItems: 'center',
     justifyContent: 'center',
-    // backgroundColor: '#CFDFEF',
   },
   navigatorStyle: {
     position: 'absolute',
     bottom: 25,
     left: 20,
     right: 20,
-    // elevation: 0,
     backgroundColor: '#ffffff',
     shadowColor: '#7F5DF0',
     shadowRadius: 3.5,
@@ -64,6 +48,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     height: 90,
+  },
+  top1: {
+    paddingTop: responsiveHeight(1),
+    fontSize: responsiveFontSize(1.5),
+    width: '60%',
+  },
+  header: {
+    backgroundColor: 'green',
   },
 });
 

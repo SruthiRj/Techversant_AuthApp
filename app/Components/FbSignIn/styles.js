@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
+  text: {
+    color: 'white',
+  },
 });
 
 export default styles;
