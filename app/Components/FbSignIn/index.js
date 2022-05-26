@@ -7,8 +7,10 @@ import {
 } from 'react-native-fbsdk-next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './styles';
+// import Context from '../Context/context';
 
 const FbSignIn = props => {
+  // const contextType = Context;
   const getResponseInfo = (error, result) => {
     if (error) {
       alert('Error fetching data: ' + error.toString());
@@ -17,7 +19,8 @@ const FbSignIn = props => {
       AsyncStorage.setItem('@image', result.picture.data?.url);
       AsyncStorage.setItem('@email', '');
       AsyncStorage.setItem('type', 'fb');
-      props.success();
+
+      props.success(result?.name, 'fb');
     }
   };
 

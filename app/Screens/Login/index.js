@@ -1,24 +1,32 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import {styles} from './styles';
 import GoogleSignIn from '../../Components/GoogleSignIn';
 import FbSignIn from '../../Components/FbSignIn';
-import AppleSignin from '../../Components/AppleSignIn';
+import Context from '../../Components/Context/context';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
   componentDidMount() {}
 
-  navigateToHome = () => {
+  static contextType = Context;
+
+  navigateToHome = (name, type) => {
+    console.log(' name is .... ' + name);
+    this.context.addData(name, type);
     this.props.navigation.reset({
       index: 0,
-      routeNames: ['BottomTab'],
-      routes: [{name: 'BottomTab'}],
+      routeNames: ['Congrats'],
+      routes: [{name: 'Congrats'}],
     });
+    // this.props.navigation.reset({
+    //   index: 0,
+    //   routeNames: ['BottomTab'],
+    //   routes: [{name: 'BottomTab'}],
+    // });
   };
 
   render() {
@@ -26,15 +34,14 @@ export default class Login extends Component {
       <SafeAreaView style={styles.container}>
         <Text style={styles.signin}>Sign In</Text>
         <GoogleSignIn
-          success={() => {
-            this.navigateToHome();
+          success={(name, type) => {
+            this.navigateToHome(name, type);
           }}
         />
         <View style={styles.line} />
         <FbSignIn
-          success={() => {
-            //why not make this a common function call
-            this.navigateToHome();
+          success={(name, type) => {
+            this.navigateToHome(name, type);
           }}
         />
 

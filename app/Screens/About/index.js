@@ -4,6 +4,7 @@ import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {LoginManager} from 'react-native-fbsdk-next';
+import Context from '../../Components/Context/context';
 
 export default class About extends Component {
   constructor() {
@@ -15,6 +16,8 @@ export default class About extends Component {
       type: null,
     };
   }
+  static contextType = Context;
+
   componentDidMount() {
     this.getValues();
   }
@@ -40,6 +43,7 @@ export default class About extends Component {
     } else {
       this.logoutFromGoogle();
     }
+    this.context.deleteData();
   };
 
   logoutFromFacebook = () => {
@@ -79,7 +83,6 @@ export default class About extends Component {
           />
           <Text style={styles.textStyle}>{this.state.name}</Text>
           <Text style={styles.emailStyle}>{this.state.type}</Text>
-
           <TouchableOpacity
             style={styles.logout}
             onPress={() => {

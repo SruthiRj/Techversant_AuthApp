@@ -8,8 +8,9 @@ const styles = StyleSheet.create({
   },
   innerBox: {
     alignItems: 'center',
-    flex: 1,
+    // flex: 1,
     paddingTop: responsiveHeight(6),
+    flexGrow: 1,
   },
   homeText: {
     fontSize: 25,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
   logoutText: {},
   outterView: {
     flex: 1,
+    marginBottom: responsiveHeight(12),
   },
 });
 

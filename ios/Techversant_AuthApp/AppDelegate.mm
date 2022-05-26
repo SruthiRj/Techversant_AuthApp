@@ -5,9 +5,10 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-
+#import <UserNotifications/UserNotifications.h>
+#import <RNCPushNotificationIOS.h>
 #import <React/RCTAppSetupUtils.h>
-
+#import <React/RCTLinkingManager.h>
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -50,7 +51,9 @@
   } else {
     rootView.backgroundColor = [UIColor whiteColor];
   }
-
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+   center.delegate = self;
+  
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
@@ -61,6 +64,11 @@
   [FIRApp configure];
 
   return YES;
+}
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+  completionHandler(UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge);
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
@@ -107,6 +115,30 @@
 - (id<RCTTurboModule>)getModuleInstanceFromClass:(Class)moduleClass
 {
   return RCTAppSetupDefaultModuleFromClass(moduleClass);
+}
+
+// Required for the register event.
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+ [RNCPushNotificationIOS didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+// Required for the notification event. You must call the completion handler after handling the remote notification.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+  [RNCPushNotificationIOS didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+// Required for the registrationError event.
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+ [RNCPushNotificationIOS didFailToRegisterForRemoteNotificationsWithError:error];
+}
+// Required for localNotification event
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler
+{
+  [RNCPushNotificationIOS didReceiveNotificationResponse:response];
 }
 
 #endif

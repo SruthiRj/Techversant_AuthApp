@@ -12,6 +12,7 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 import Navigation from './app/Components/Navigation';
 import styles from './app/Components/Helpers/styles';
+import GlobalState from './app/Components/Context/GlobalState';
 
 const App = () => {
   useEffect(() => {
@@ -19,7 +20,6 @@ const App = () => {
   }, []);
 
   const googleConfigure = () => {
-    console.log(' configure... from app');
     GoogleSignin.configure({
       webClientId:
         '490250010639-6lp8m4utg79u0tbgvfoplk04qhd7ga2c.apps.googleusercontent.com',
@@ -31,7 +31,9 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Navigation />
+      <GlobalState>
+        <Navigation />
+      </GlobalState>
     </SafeAreaView>
   );
 };

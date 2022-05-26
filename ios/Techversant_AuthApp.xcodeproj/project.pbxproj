@@ -48,6 +48,7 @@
 		74E382001E3F3CF0E9C1398F /* Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp-Techversant_AuthAppTests/Pods-Techversant_AuthApp-Techversant_AuthAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		79D49D64579332FB16D357DC /* Pods-Techversant_AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techversant_AuthApp.release.xcconfig"; path = "Target Support Files/Pods-Techversant_AuthApp/Pods-Techversant_AuthApp.release.xcconfig"; sourceTree = "<group>"; };
 		7EEDBD625A6C4AA98B3332F3 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		812B4EEA283E46DF00B94B81 /* Techversant_AuthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Techversant_AuthApp.entitlements; path = Techversant_AuthApp/Techversant_AuthApp.entitlements; sourceTree = "<group>"; };
 		817F9C132833BCE1000970A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Techversant_AuthApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848B0960952C469FB4A94000 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		13B07FAE1A68108700A75B9A /* Techversant_AuthApp */ = {
 			isa = PBXGroup;
 			children = (
+				812B4EEA283E46DF00B94B81 /* Techversant_AuthApp.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -541,8 +543,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Techversant_AuthApp/Techversant_AuthApp.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 64F9R28Q25;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Techversant_AuthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -556,6 +560,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Techversant_AuthApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -568,8 +573,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Techversant_AuthApp/Techversant_AuthApp.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 64F9R28Q25;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Techversant_AuthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,6 +589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Techversant_AuthApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
