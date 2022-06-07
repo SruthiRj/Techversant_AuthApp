@@ -11,6 +11,11 @@ import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {responsiveHeight} from '../../Components/Responsive';
 import PushController from '../../Components/Push';
+import messaging from '@react-native-firebase/messaging';
+
+//pass the login type to push controller then inside it,
+//chedk if type == google then subscribe to topic google, send push.
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +28,7 @@ export default class Home extends Component {
     };
   }
   componentDidMount() {
+    this.getToken();
     console.log(' gett value s...  ' + Platform.OS);
     this.getValues();
     Dimensions.addEventListener('change', ({window: {width, height}}) => {
@@ -59,12 +65,23 @@ export default class Home extends Component {
     } catch (e) {}
   };
 
+  async getToken() {
+    const fcmToken = await messaging().getToken();
+    if (fcmToken) {
+      // user has a device token set it into store
+      await AsyncStorage.setItem('fcmToken', fcmToken);
+    } else {
+      console.log(' elssse  ***');
+      // NotificationService.error(constant.error, 'Could not get the FCM token');
+    }
+  }
+
   render() {
     return (
       <View style={{flex: 1, marginBottom: responsiveHeight(9)}}>
         <ScrollView contentContainerStyle={styles.container}>
           <View style={{flex: 1}}>
-            <PushController />
+            <PushController type={this.state.type} />
             <View style={styles.row}>
               <View style={styles.column}>
                 <Text style={styles.homeText}>Hello {this.state.name}</Text>

@@ -4,12 +4,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import Login from '../../Screens/Login';
 import BottomTab from '../BottomTab';
 import Congrats from '../../Screens/Congrats';
+import linking from './linking';
 
 const RootStack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+    //linking={linking}
+    >
       <RootStack.Navigator initialRouteName="Login">
         <RootStack.Screen
           name="Login"

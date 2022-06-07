@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {LoginManager} from 'react-native-fbsdk-next';
 import Context from '../../Components/Context/context';
+import messaging from '@react-native-firebase/messaging';
 
 export default class About extends Component {
   constructor() {
@@ -42,6 +43,7 @@ export default class About extends Component {
       this.logoutFromFacebook();
     } else {
       this.logoutFromGoogle();
+      messaging().unsubscribeFromTopic('google');
     }
     this.context.deleteData();
   };

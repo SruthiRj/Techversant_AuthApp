@@ -2,10 +2,21 @@ import React from 'react';
 import {Linking, Platform} from 'react-native';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import PushNotification from 'react-native-push-notification';
+import messaging from '@react-native-firebase/messaging';
 
-const PushController = () => {
+const PushController = props => {
   PushNotification.configure({
-    onRegister: function () {},
+    onRegister: function (token) {
+      console.log(props.type);
+      if (props.type === 'google') {
+        console.log(' token is... ***** ');
+        console.log(token);
+        messaging().subscribeToTopic('google');
+        console.log('TOKEN:', token);
+      } else {
+        console.log(' fb is ..');
+      }
+    },
     onNotification: function (notification) {
       if (notification.foreground === true) {
         if (
@@ -16,6 +27,7 @@ const PushController = () => {
             console.log(' 11111111');
             console.log(' goijg to open url');
             var url = notification?.data?.link ?? notification?.message;
+            console.log(url);
             Linking.openURL(url);
           } else {
             PushNotification.localNotification(notification);

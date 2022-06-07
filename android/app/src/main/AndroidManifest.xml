@@ -11,6 +11,8 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+     
+
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground"
                     android:value="false"/>
         <!-- Change the resource name to your App's accent color - or any other color you want -->
@@ -53,6 +55,7 @@
               <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> -->
           </intent-filter>
       </activity>
+      
 
       <activity
         android:name=".MainActivity"
@@ -64,6 +67,14 @@
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+          <intent-filter>
+       <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+         <category android:name="android.intent.category.BROWSABLE" />
+          <data 
+            android:host="app"
+            android:scheme="authapp" />
         </intent-filter>
       </activity>
     </application>
